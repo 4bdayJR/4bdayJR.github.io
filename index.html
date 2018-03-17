@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>John Ruero</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body 
+  {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+
+  h2 
+  {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+
+  h4 
+  {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+  }
+  .logo {
+      color: #f4511e;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff !important;
+      color: #f4511e;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">UNIVERSITIES</a></li>
+        <li><a href="#services">ISSAPH</a></li>
+        <li><a href="#cybersecurities">PSM Cybersecurity</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Happy Birthday</h1> 
+  <h1>John Ruero</h1>
+  <img src="bday.jpg" alt="BDay">
+</div>
+
+
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <center>
+      <h2>PEOPLE WHO LOVE YOU FROM THE UNIVERSITIES AND COLLEGES </h2> <br>
+      <img src="jissa.JPG   ">
+      <br> <br>
+
+     <h4>Carl Angelo Gallardo from University of Luzon </h4> 
+     <h4>Your Birthday is the most important day of your life. Because it reminds me the day a legend was born and came into to make it awesome. Happy Happy Birthday Sir. John!</h4>
+      <br> <br> <br>
+    
+
+      <h4>Asia Pacific College</h4>
+      <h4>Happy Birthday Sir John galing sa panganay ng JISSA Chapter from all of us. More knowledge</h4>
+      <br> <br> <br>  
+
+    <h4>Louie Arteta from Asia Pacific College</h4>
+    <h4>Happy Birthday Sir John! Thank you for inspiring me to do better and for all the opportunities you have given. Best wishes</h4>    
+    <br> <br> <br>
+    
+    
+    <h4>Abien Fred Agarap from Adamson University</h4>
+    <h4>Happy birthday, Sir John! Wishing you the best of everything! Please continue to inspire people to be more than what they are, to always aim for higher levels of themselves. Laus Deo Semper!</h4>
+    <br> <br> <br>
+
+      
+    <h4>Aaron M. Lagdameo from Malayan Colleges Laguna</h4>
+    <h4>Happy birthday to a really cool and awesome person, Sir John Ruero. Thank you so much for all the knowledge you have imparted to me and everyone else, wishing for good health and more blessings to come to you and the entire Infosec</h4>
+    <br> <br> <br>
+
+
+    <h4>Hera Helene Tenorio Macalalad from De La Salle Lipa</h4>
+    <h4>Yow yow yow! Happy birthday po   though I am new sa council, I just wanted to thank you for establishing an org that is in line with my interest. I hope you have a continuous healthy living, successful endeavors and blessed life   Again, happy birthday and God bless you!</h4>
+    <br> <br> <br>
+
+    <h4>Red Gavin Racca from Mapua University</h4>
+    <h4>Happy Birthday sir John, I wish you all the best for you and your family. I hope that you will be able to accomplish the things you wish to this year. God bless and Happy Birthday!</h4>
+    <br> <br> <br>
+
+
+    <h4>Gonzalo Gumogda from Mapua University</h4>
+    <h4>Hi sir! Happy Birthday! I am very thankful na kinuha ko yung infosec class na yun! Haha! Thank you for introducing me to the world of security and thank you for giving me the chance to attend several events that opened new avenues to my career! Happy birthday uli sir! Praying that you will have a good one. God bless!</h4>
+    <br> <br> <br>
+
+
+    <h4>Marc Jefferson Tabujara from Adamson University</h4>
+    <h4>Happy Birthday Sir John, Cheers to our ever young and legendary colleague, friend, mentor and our father figure since my JISSA days. Every year us a blessing to us because we know we have someone like Sir John Ruero scratching our backs. 
+        Thank you for everything and my one wish for you is to always have a good health. Cheers! 
+        </h4>
+    <br> <br> <br>
+
+
+<h4>SPUQC JISSA Chapter</h4>
+<h4>Hi Sir John! Happy Birthday !! We wish you all the best on your special day and we're wishing for you to have many many more birthdays to come. We are all looking forward to meet you and learn a lot from you. God bless Sir John!</h4>
+<br> <br> <br>
+
+
+<h4>Arriane Livara from Adamson University</h4>
+<h4>HAPPY BIRTHDAY SIR JOHN! 🎈🎉</h4>
+<br> <br> <br>
+
+
+<h4>Keith Quijalvo from Adamson University</h4>
+<h4>Happy Birthday Sir John!👌</h4>
+<br> <br> <br>
+
+
+
+
+    </center>
+    </div>
+</div>
+
+
+<div id="services" class="container-fluid text-center">
+  <h2>ISSAPH</h2>
+  <h4>ISSA PEOPLE LOVES YOU, THAT'S WHY HERE ARE THE BIRTHDAY MESSAGES FOR YOU SIR JOHN RUERO!</h4>
+  <img src="team.JPG">
+  <br> <br>
+
+
+  <h4>Bryant Cabantac</h4>
+  <h4>Dear Sir John, Will keep this short as i believe you will have tons of other greetings to read. The day sir Gerald introduced me to you changed the direction of my InfoSec career. Besides sharing your expertise, in the IT and InfoSec, providing advice and career guidance, you have also introduced me to other well-respected InfoSec professionals that are now friends and mentors as well. And now you are also helping me for fulfil another dream - teaching in a university. I cannot express how grateful I am knowing you and being your friend.</h4>
+  <br>  <br>  <br>
+
+  <h4>Carlos Ely Tingson (PSG)</h4>
+  <h4>Happy Birthday John. Thank you for being a good mentor and inspiration to all of us. More power to you!</h4>
+  <br>  <br>  <br>
+
+  <h4>Jonathan Garcia</h4>
+  <h4>May your day be filled with God’s goodness. Happy Birthday!!</h4>
+  <br>  <br>  <br>
+
+  <h4>Justin David Pineda</h4>
+  <h4>Happy Birthday John! I'm so thankful that our paths crossed. Thank you for all the help and guidance that you have provided me in my personal and career life. Looking forward for more activities with you! Enjoy your day.</h4>
+  <br>  <br>  <br>
+
+  <h4>James Michael Adoremos</h4>
+  <h4>Happy Birthday John! More blessings to come and stay healthy. Thank you for the advices. God Bless!</h4>
+  <br>  <br>  <br>
+
+  <h4>Diosdado Caronongan</h4>
+  <h4> Hi. Here it is: Happy Happy birthday John. You're such a great man who loves simple things in life. Thank you, my friend, for touching so many lives - and that of course includes me. Stay blessed, you deserve it. Proud classmate and friend here - Engr. Dads Caronongan </h4>
+  <br>  <br>  <br>
+
+  <h4>Raymond Nuñez</h4>
+  <h4>More werpa sa ISSA lolo John! -monpogi</h4>
+  <br>  <br>  <br>
+
+
+  <h4>Carlo and Dianne</h4>
+  <h4>Happy 20th birthday, kuya john ruero.  Godbless always and best of health</h4>
+  <br>  <br>  <br>
+
+
+  <h4>Mon Macatangga</h4>
+  <h4>God of all creation, we offer you grateful praise for the gift of life. Hear the prayers of John Peter Abraham Q. Ruero your servant, who recalls today the day of his birth and rejoices in your gifts of life and love, family and friends. Bless him with your presence and surround him with your love that he may enjoy many happy years, all of them pleasing to you. We ask this through Christ our Lord. Amen! Happy birthday John, with all my prayers. </h4>
+
+  <br>  <br>  <br>  
+
+
+  <h4>Nesel</h4>
+  <h4>To the person who enlightened me to IT Security, my professor, colleague, and our Ninong. Happiest Birthday to you sir John!!! More candles to blow and blessings to come.</h4>
+  <br>  <br>  <br>
+
+ 
+  <video width="900" height="700" controls>
+    <source src="sample1.mp4" type="video/mp4">
+  </video> 
+
+  <br>  <br>  <br> <br>  <br>  <br>
+
+  <video width="900" height="700" controls>
+    <source src="sample2.mp4" type="video/mp4">
+  </video> 
+
+
+
+
+  <br>  <br>  <br>
+  <div id="cybersecurities" class="container-fluid text-center">
+    <h2>PSM Cybersecurity</h2>
+    <h3>Happy Birthday</h3>
+  <video width="900" height="700" controls>
+    <source src="teamstrong.mp4" type="video/mp4">
+  </video> 
+
+ </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        window.location.hash = hash;
+      });
+    } 
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+
+</script>
+
+</body>
+</html>
